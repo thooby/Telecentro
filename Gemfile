@@ -30,4 +30,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'ruby-debug'
-
+gem 'devise'
+gem 'activeadmin'
