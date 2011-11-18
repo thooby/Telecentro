@@ -15,8 +15,8 @@
 
 <% @venta.each do |ventum| %>
   <tr>
-    <td><%= ventum.persona.nombre %></td>
-    <td><%= ventum.servicio.nombre %></td>
+    <td><%= ventum.persona %></td>
+    <td><%= ventum.servicio %></td>
     <td><%= ventum.cantidad %></td>
     <td><%= ventum.monto %></td>
     <td><%= ventum.fecha %></td>
