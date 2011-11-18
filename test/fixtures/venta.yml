@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  persona_id: 1
+  servicio_id: 1
+  cantidad: 9.99
+  monto: 9.99
+  fecha: 2011-11-18
+  hora: 2011-11-18 01:05:00
+
+two:
+  persona_id: 1
+  servicio_id: 1
+  cantidad: 9.99
+  monto: 9.99
+  fecha: 2011-11-18
+  hora: 2011-11-18 01:05:00
