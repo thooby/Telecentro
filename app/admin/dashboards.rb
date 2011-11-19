@@ -1,5 +1,13 @@
 ActiveAdmin::Dashboards.build do
 
+    section "Ultimas ventas" do
+      ul do
+        Ventum.limit(5).order("created_at ASC").collect do |ventum|
+          li link_to(ventum.persona.name, admin_ventum_path(ventum))
+        end
+      end
+    end
+  
   # Define your dashboard sections here. Each block will be
   # rendered on the dashboard in the context of the view. So just
   # return the content which you would like to display.
