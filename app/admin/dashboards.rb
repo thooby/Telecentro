@@ -1,8 +1,23 @@
 ActiveAdmin::Dashboards.build do
-
+  section "Statistics" do
+    div :class => "attributes_table" do
+      table do
+        tr do
+          th "Ventas del mes"
+          td number_with_delimiter(Ventum.this_month.count)
+        end
+    
+        tr do
+          th "Ingresos del mes"
+          td number_with_delimiter(Ventum.this_month.all.sum(&:monto)), :style => "font-weight: bold;"
+        end
+    
+      end
+    end
+  end
     section "Ultimas ventas" do
       ul do
-        Ventum.limit(5).order("created_at ASC").collect do |ventum|
+        Ventum.limit(5).order("fecha DESC").collect do |ventum|
           li link_to(ventum.persona.name, admin_ventum_path(ventum))
         end
       end
