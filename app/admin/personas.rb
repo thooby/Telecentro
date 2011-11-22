@@ -1,6 +1,5 @@
 ActiveAdmin.register Persona do
   filter :name, :as => :string, :label => "Nombre y/o Apellidos"
-  #filter :name
   filter :celular
   filter :email
   filter :tele_operador
