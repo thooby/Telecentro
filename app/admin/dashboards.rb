@@ -3,7 +3,16 @@ ActiveAdmin::Dashboards.build do
     div :class => "attributes_table" do
       table do
         tr do
-          th "Ventas del mes"
+          th "Número de ventas del día"
+          td number_with_delimiter(Ventum.this_day.count)
+        end
+    
+        tr do
+          th "Ingresos del día"
+          td number_with_delimiter(Ventum.this_day.all.sum(&:monto)), :style => "font-weight: bold;"
+        end
+        tr do
+          th "Número de ventas del mes"
           td number_with_delimiter(Ventum.this_month.count)
         end
     

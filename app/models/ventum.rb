@@ -13,10 +13,10 @@ class Ventum < ActiveRecord::Base
     self.fecha = Date.today
   end
   def self.this_month
-    where('fecha >= ?', Date.new(Time.now.year, Time.now.month, 1).to_datetime)
+    where('fecha >= ?', Date.new(Time.now.year, Time.now.month, 1).to_date)
   end
   def self.this_day
-    where('fecha >= ?', Date.new(Time.now.year, Time.now.month, Time.now.day).to_datetime)
+    where('fecha >= ?', Date.new(Time.now.year, Time.now.month, Time.now.day).to_date)
   end
   
 end
