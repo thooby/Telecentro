@@ -18,5 +18,7 @@ class Ventum < ActiveRecord::Base
   def self.this_day
     where('fecha >= ?', Date.new(Time.now.year, Time.now.month, Time.now.day).to_date)
   end
-  
+  def self.this_yesterday
+    where('fecha = ?', Date.new(Time.now.year, Time.now.month, Time.now.day-1).to_date)
+  end
 end

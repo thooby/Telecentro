@@ -12,6 +12,15 @@ ActiveAdmin::Dashboards.build do
           td number_with_delimiter(Ventum.this_day.all.sum(&:monto)), :style => "font-weight: bold;"
         end
         tr do
+          th "Número de ventas de ayer"
+          td number_with_delimiter(Ventum.this_yesterday.count)
+        end
+    
+        tr do
+          th "Ingresos de ayer"
+          td number_with_delimiter(Ventum.this_yesterday.all.sum(&:monto)), :style => "font-weight: bold;"
+        end
+        tr do
           th "Número de ventas del mes"
           td number_with_delimiter(Ventum.this_month.count)
         end
