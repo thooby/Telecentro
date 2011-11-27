@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  persona_id: 
+  hora_entrada: 
+  hora_salida: 
+  remanente: 9.99
+
+two:
+  persona_id: 
+  hora_entrada: 
+  hora_salida: 
+  remanente: 9.99

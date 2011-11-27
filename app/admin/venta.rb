@@ -20,6 +20,7 @@ ActiveAdmin.register Ventum do
           row :servicio
           row :cantidad
           row :monto
+          row("Remanente del bono") {ventum.persona.bono.remanente}
         end
       end
     end
