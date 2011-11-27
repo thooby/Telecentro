@@ -9,6 +9,7 @@ ActiveAdmin.register Ventum do
       column :persona
       column :servicio
       column :cantidad
+      column :monto
       default_actions
     end
     show do

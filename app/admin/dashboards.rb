@@ -1,5 +1,5 @@
 ActiveAdmin::Dashboards.build do
-  section "Statistics" do
+  section "Estadísticas" do
     div :class => "attributes_table" do
       table do
         tr do

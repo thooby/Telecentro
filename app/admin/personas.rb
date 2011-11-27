@@ -15,12 +15,17 @@ ActiveAdmin.register Persona do
     show :title => :name do
       panel "Datos personales" do
         attributes_table_for persona do
-          row("Nombre") { persona.nombre }
-          row("Primer apellido") { persona.apellido1 }
-          row("Segundo apellido") { persona.apellido2 }
-          row("Celular") { persona.celular }
-          row("Tele Operador"){persona.tele_operador}
-          row("e-mail") { persona.email }
+          row("email") {persona.email}
+          row("celular") {persona.celular}
+          row("operador") {persona.tele_operador.name}
+        end
+      end
+      panel "Resumen de consumo" do
+        table_for(persona.venta) do
+          column("Fecha", :sortable => :fecha) {|ventum| link_to "#{ventum.fecha}", admin_ventum_path(ventum) }
+          column("Servicio") {|ventum| ventum.servicio.nombre}
+          column("Cantidad") {|ventum| ventum.cantidad.to_s}
+          column("Monto") {|ventum| ventum.monto.to_s}
         end
       end
     end
