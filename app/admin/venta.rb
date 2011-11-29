@@ -3,6 +3,13 @@ ActiveAdmin.register Ventum do
   filter :servicio
   filter :monto
   filter :fecha
+  controller do
+        # This code is evaluated within the controller class
+
+        def new
+          @ventum = Ventum.new(:hora => Time.now, :fecha => Date.today)        
+        end
+      end
   index do
       column("Fecha") {|ventum| ventum.fecha.to_formatted_s(:rfc822)}
       column("Hora") {|ventum| ventum.hora.strftime("%H:%M")}
@@ -35,10 +42,10 @@ ActiveAdmin.register Ventum do
     end
     form do |f|
           f.inputs "Datos del Servicio" do
-            f.input :fecha, :default => Date.today
+            f.input :fecha
             f.input :hora
-            f.input :persona          
-            f.input :servicio
+            f.input :persona, :include_blank => false          
+            f.input :servicio, :include_blank => false
             f.input :cantidad
 
           end
